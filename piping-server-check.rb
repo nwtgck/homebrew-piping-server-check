@@ -5,20 +5,20 @@
 class PipingServerCheck < Formula
   desc "Check CLI for Piping Server"
   homepage "https://github.com/nwtgck/piping-server-check"
-  version "0.1.0-SNAPSHOT"
+  version "0.1.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0-SNAPSHOT/piping-server-check-0.1.0-SNAPSHOT-darwin-arm64.tar.gz"
-      sha256 "2f5f9a52c02ec3e781c70ae84ba90e2e162da45283823e1c5489bbe9eb53a49d"
+    if Hardware::CPU.intel?
+      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0/piping-server-check-0.1.0-darwin-amd64.tar.gz"
+      sha256 "80d4ce8aaa298d86246ecbb99c6bfaf1062770491a331e4827c5db2f657cc064"
 
       def install
         bin.install "piping-server-check"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0-SNAPSHOT/piping-server-check-0.1.0-SNAPSHOT-darwin-amd64.tar.gz"
-      sha256 "52eb4ef407740e7f1a26329d23e8b38f64f484ce380901568f4f3a15a8b67567"
+    if Hardware::CPU.arm?
+      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0/piping-server-check-0.1.0-darwin-arm64.tar.gz"
+      sha256 "aad75f3132af6976faf328c43361b0861079cc9c24d8aaad1f1cfee339d1bf48"
 
       def install
         bin.install "piping-server-check"
@@ -27,25 +27,25 @@ class PipingServerCheck < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0-SNAPSHOT/piping-server-check-0.1.0-SNAPSHOT-linux-arm64.tar.gz"
-      sha256 "ef3a5792ea28cc708935ef02ee9cbabc381a648ac9c6aefb6deea27ecf13cecb"
-
-      def install
-        bin.install "piping-server-check"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0-SNAPSHOT/piping-server-check-0.1.0-SNAPSHOT-linux-amd64.tar.gz"
-      sha256 "a96c4a8f26b9750609aae1dd3128e79431d8d025b95d0e6901b5ba847eb9038e"
+      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0/piping-server-check-0.1.0-linux-amd64.tar.gz"
+      sha256 "dcab312557e4a247b03a0cdb180a49fe44e8b9f419238aad0363427db5f2894d"
 
       def install
         bin.install "piping-server-check"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0-SNAPSHOT/piping-server-check-0.1.0-SNAPSHOT-linux-armv6.tar.gz"
-      sha256 "51ef543469df82c252474661d73dc947e433db207c8b235e235de015f195c6c1"
+      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0/piping-server-check-0.1.0-linux-armv6.tar.gz"
+      sha256 "63616d71772c58cf6c16dbc3bed6c98c1ca8ab10e1be516fe40feb07da5c87c7"
+
+      def install
+        bin.install "piping-server-check"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/nwtgck/piping-server-check/releases/download/v0.1.0/piping-server-check-0.1.0-linux-arm64.tar.gz"
+      sha256 "6f4d3efefce0e9033c093a01f0aea95d386e92e2cc268a77ffa80fd6f796bc13"
 
       def install
         bin.install "piping-server-check"
